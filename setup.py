@@ -1,28 +1,35 @@
-import os
-from glob import glob
 from setuptools import setup
 
-package_name = 'image_crawling'
+package_name = 'rosbag_image_crawler'
 
 setup(
     name=package_name,
-    version='0.0.1',
+    version='0.1.0',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), glob('launch/*launch.[pxy][yma]*')) # 파이썬 단일 패키지는 런시 설정을 추가 해줘야함. 
+        ('share/' + package_name + '/launch', ['launch/image_crawler.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='turtle',
-    maintainer_email='turtle@todo.todo',
-    description='TODO: Package description',
-    license='Apache License 2.0',
+    author='Shin',
+    author_email='dev_shin@cwsfa.co.kr',
+    maintainer='Shin, leeeju',
+    maintainer_email='dev_shin@cwsfa.co.kr, stu02@cwsfa.co.kr',
+    keywords=['ROS'],
+    classifiers=[
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python',
+        'Topic :: Software Development',
+    ],
+    description='The image crawler that extracts and stores image topics every set period from rosbag file.',
+    license='Apache License, Version 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'bagimgset = image_crawling.rosbag_to_imgset:main',      # 했는데 왜 이러냐?
+            'image_crawler = rosbag_image_crawler.image_crawler:main',
         ],
     },
 )
