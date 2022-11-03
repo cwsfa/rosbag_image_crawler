@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/foxy/include/**",
+        "/home/shin/robot_ws/src/growth_meter/growth_meter_bringup/include/**",
+        "/home/shin/robot_ws/src/realsense_gazebo_plugin/include/**",
+        "/home/shin/robot_ws/src/tflidar_ros/include/**",
+        "include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
