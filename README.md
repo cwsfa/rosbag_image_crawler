@@ -5,6 +5,7 @@
 - **Package Name**: rosbag_image_crawler
 - **Node Name**: image_crawler.py
 - **Subscriber Topics**: /camera/color/image_raw & /camera/depth/image_rect_raw
+- **Note:** This node Run your Ros2 record file first
 ## Parameters
 
 - 'color_topic': color_topic
