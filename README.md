@@ -17,7 +17,7 @@
 
 ```bash
 $ cd ~/robot_ws/src
-$ git https://github.com/cwsfa/rosbag_image_crawler.git
+$ git clone https://github.com/cwsfa/rosbag_image_crawler.git
 $ cd ..
 $ colcon build --symlink-install
 $ cd ~/robot_ws/src/rosbag_image_crawler/
