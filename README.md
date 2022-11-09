@@ -1,4 +1,5 @@
 # Rosbag Image Crawler (for ROS2)
+The image crawler that extracts and stores image topics every set period from rosbag file 
 
 ## Package Information
 
