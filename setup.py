@@ -36,6 +36,7 @@ setup(
     entry_points={
         'console_scripts': [
             'image_crawler = rosbag_image_crawler.image_crawler:main',
+            'get_label = rosbag_image_crawler.get_label:main',
         ],
     },
 )
