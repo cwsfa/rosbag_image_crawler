@@ -23,19 +23,19 @@ class ImageCrawler(Node):
         self.declare_parameter('is_debug', False)
         self.declare_parameter('color_topic', '/camera/color/image_raw')
         self.declare_parameter('depth_topic', '/camera/aligned_depth_to_color/image_raw')
-        self.declare_parameter('cycle', 1.0)  # (s)
+        self.declare_parameter('rate', 1.0)  # (s)
         self.declare_parameter('output_dir', '/home/' + USERNAME + '/clawed_image')
 
         self.is_debug = self.get_parameter('is_debug').value
         color_topic = self.get_parameter('color_topic').value
         depth_topic = self.get_parameter('depth_topic').value
-        self.cycle = self.get_parameter('cycle').value
+        self.rate = self.get_parameter('rate').value
         self.output_dir = self.get_parameter('output_dir').value
 
         self.get_logger().info(f'Show image: {self.is_debug}')
         self.get_logger().info(f'Color image topic: {color_topic}')
         self.get_logger().info(f'Depth image topic: {depth_topic}')
-        self.get_logger().info(f'Crawling cycle rate: {self.cycle}')
+        self.get_logger().info(f'Crawling rate rate: {self.rate}')
         self.get_logger().info(f'Saving directory: {self.output_dir}')
 
         # check if output directory exists
@@ -68,7 +68,7 @@ class ImageCrawler(Node):
         """
         assert color_msg.header.stamp == depth_msg.header.stamp
 
-        if self.get_clock().now().to_msg().sec - self.c_time > self.cycle:
+        if self.get_clock().now().to_msg().sec - self.c_time > self.rate:
             self.c_time = self.get_clock().now().to_msg().sec  # update current time
             self.get_logger().info("Number of frames crawled => " + str(self.n_frame))
 
