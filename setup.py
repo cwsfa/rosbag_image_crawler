@@ -4,7 +4,7 @@ package_name = 'rosbag_image_crawler'
 
 setup(
     name=package_name,
-    version='0.1.0',
+    version='0.1.1',
     packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
@@ -15,8 +15,14 @@ setup(
     zip_safe=True,
     author='Shin',
     author_email='dev_shin@cwsfa.co.kr',
-    maintainer='Shin, leeeju',
-    maintainer_email='dev_shin@cwsfa.co.kr, stu02@cwsfa.co.kr',
+    maintainer=[
+        'Shin',
+        'leeeju',
+        'Batbold'],
+    maintainer_email=[
+        'dev_shin@cwsfa.co.kr',
+        'stu02@cwsfa.co.kr',
+        'batbold@cwsfa.co.kr'],
     keywords=['ROS'],
     classifiers=[
         'Intended Audience :: Developers',
@@ -30,6 +36,7 @@ setup(
     entry_points={
         'console_scripts': [
             'image_crawler = rosbag_image_crawler.image_crawler:main',
+            'get_label = rosbag_image_crawler.get_label:main',
         ],
     },
 )
