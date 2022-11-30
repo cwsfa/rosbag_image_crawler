@@ -13,7 +13,7 @@ USERNAME = os.getlogin()
 def generate_launch_description():
     # configurations
     is_debug = LaunchConfiguration('is_debug', default=False)
-    is_label = LaunchConfiguration('is_label', default=True)
+    is_label = LaunchConfiguration('is_label', default=False)
     color_topic = LaunchConfiguration('color_topic', default='/camera/color/image_raw')
     depth_topic = LaunchConfiguration('depth_topic', default='/camera/aligned_depth_to_color/image_raw')
     rate = LaunchConfiguration('rate', default='1.0')

@@ -83,6 +83,7 @@ class ImageCrawler(Node):
                 # convert ros image message to cv2 image
                 cv_color_image = self.bridge.imgmsg_to_cv2(color_msg, desired_encoding='bgr8')
                 cv_depth_image = self.bridge.imgmsg_to_cv2(depth_msg)
+                cv_depth_image = cv2.cvtColor(cv_depth_image, cv2.COLOR_GRAY2RGB)
                 # save crawled images
                 cv2.imwrite(os.path.join(self.output_dir, 'color', frame_name), cv_color_image)
                 cv2.imwrite(os.path.join(self.output_dir, 'depth', frame_name), cv_depth_image)
